@@ -6,6 +6,10 @@
     overflow-x: hidden;
     font-family: 'Roboto', sans-serif;
 }
+*::selection{
+    background:rgb(121, 233, 121);
+    color: white;
+}
 /* banner header type */
 .banner {
     position: absolute;
@@ -53,7 +57,8 @@
     width: 310px;
     height: 30px;
     font-size: 30px;
-    padding: 5px;
+    padding: 20px;
+    margin: 5px;
     border:none;
     border-bottom: 1px solid rgb(126, 226, 193);
     outline:none;
@@ -76,6 +81,12 @@
 }
 .input button,input{
     transform: translateX(35px)
+}
+.input_results{
+    display: flex;
+    flex: column;
+    text-align: center;
+    border: 1px solid green;
 }
 @media only screen and (max-width:376px) {
     .header  {
