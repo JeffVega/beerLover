@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico|Roboto');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: 'Roboto', sans-serif;
+}
+/* banner header type */
+.banner {
+    position: absolute;
+    top: 0;
+    left: 25px;
+    color: white;
+    font-size: 50px;
+    font-family: 'Pacifico', cursive;
+    width: auto;
+}
+
+/* navigation header */
+.header {
+    background: rgb(124, 124, 233);
+    border-bottom: 1px solid rgba(182, 159, 159, 0.507);
+}
+.header ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.header ul li {
+    margin: 20px;
+    cursor: pointer;
+}
+.header ul li a {
+    text-decoration: azure;
+    color: azure;
+    font-size: 25px;
+    transition: all 0.30ms;
+}
+.header ul li a:hover {
+    color: rgb(126, 226, 193);
+
+}
+.input{
+    text-align: center;
+}
+.input p {
+    font-size: 30px;
+    padding: 10px;
+}
+.input input {
+    display: inline-block;
+    width: 310px;
+    height: 30px;
+    font-size: 30px;
+    padding: 5px;
+    border:none;
+    border-bottom: 1px solid rgb(126, 226, 193);
+    outline:none;
+}
+.input button{
+    margin: 10px;
+    padding: 5px;
+    border: none;
+    background: rgb(126, 226, 193);
+    font-size: 20px;
+    border-radius: 5px;
+    color: white;
+    outline: none;
+    cursor: pointer;
+    transition: all 500ms;
+}
+.input button:hover{
+    background: rgb(68, 197, 154);
+    color: rgba(248, 248, 248, 0.753);
+}
+.input button,input{
+    transform: translateX(35px)
+}
+@media only screen and (max-width:376px) {
+    .header  {
+       width: 100%;
+       top: 60px;
+    }
+    .header:before {
+        content: '\2630';
+        display: block;
+        position: absolute;
+        right: 3%;
+        top: -50px;
+        line-height: 40px;
+        font-size: 1.4em;
+        cursor: pointer;
+      }
+      .header ul {
+        background: #222;
+        width: 100%;
+        margin: 0px;
+      }
+      .header ul li {
+        float: none;
+      }
+      .header ul li a {
+        padding: 10px 3%;
+        line-height: 20px;
+        border-top: 1px solid #333;
+      }
+}
