@@ -9,7 +9,7 @@
     <script src="./js/index.js"></script>
 </head>
 <body>
-        <h1 class="banner">Beer Love</h1>
+        <h1 class="banner">Beer Love </h1>
     <nav class="header">
         
         <ul class="header__list">
@@ -19,8 +19,10 @@
     </nav>
     <div class="input">
         <p class="input__banner">Search For Beers</p>
+        <form onsubmit="getBeerData()">
         <input type="text" name="beerSearch" id="inputBeer">
-        <button onclick="getBeerData()" type="submit" input__search"> Search</button>
+        <button  type="submit" input__search"> Search</button>
+    </form>
     </div>
     <div id='display'>
 

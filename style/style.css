@@ -15,7 +15,8 @@
     position: absolute;
     top: 0;
     left: 25px;
-    color: white;
+    color: rgb(243, 219, 177);
+    background-clip: text;
     font-size: 50px;
     font-family: 'Pacifico', cursive;
     width: auto;
@@ -45,6 +46,9 @@
     color: rgb(126, 226, 193);
 
 }
+/* -----------------------------------
+------       input            -------
+---------------------------------- */
 .input{
     text-align: center;
 }
@@ -75,6 +79,7 @@
     cursor: pointer;
     transition: all 500ms;
 }
+
 .input button:hover{
     background: rgb(68, 197, 154);
     color: rgba(248, 248, 248, 0.753);
@@ -82,11 +87,42 @@
 .input button,input{
     transform: translateX(35px)
 }
-.input_results{
+
+/* -----------------------------------
+------       results           -------
+---------------------------------- */
+#display {
     display: flex;
-    flex: column;
+    flex-direction: column;
+
+}
+.beerResults{
+    background: rgba(202, 199, 199, 0.11);
+    display: flex;
+    flex: row;
+    justify-items: center;
     text-align: center;
-    border: 1px solid green;
+    border: 1px solid rgba(128, 128, 128, 0.185);
+    border-radius: 5px;
+    max-width: 70%;
+    margin: 0 auto;
+    padding: 30px;
+    animation: fadein 1.5s ;
+}
+
+.beerResults ul {
+    width: 500px;
+    
+}
+.beerResults ul li {
+    margin: 10px;
+    padding: 10px;
+    text-align: left;
+}
+.beerResults img{
+    width: 400px;
+    height: 500px;
+    float: left;
 }
 @media only screen and (max-width:376px) {
     .header  {
@@ -116,4 +152,14 @@
         line-height: 20px;
         border-top: 1px solid #333;
       }
+}
+
+@keyframes fadein {
+    from{
+        opacity: 0;
+    }
+
+    to{
+        opacity: 1;
+    }
 }
