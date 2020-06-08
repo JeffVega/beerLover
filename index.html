@@ -5,27 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./style/style.css">
-    <title>Beer Love</title>
+    <title>Beer Find</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
     <script src="./js/index.js"></script>
 </head>
 <body>
-        <h1 class="banner">Beer Love </h1>
-    <nav class="header">
-        
-        <ul class="header__list">
-            <li><a href="/"> Home</a></li>
-            <li><a href="/"> Favorites</a></li>
-        </ul>
-    </nav>
-    <div class="input">
-        <p class="input__banner">Search For Beers</p>
-        <form onsubmit="getBeerData()">
-        <input type="text" name="beerSearch" id="inputBeer">
-        <button  type="submit" input__search"> Search</button>
-    </form>
-    </div>
-    <div id='display'>
+       
+    <div class="container">
+        <nav>
+            <div class="logo">
+                <img src="images/logo-fake.png" alt="" srcset="">
+            </div>
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">About Us</a></li>
+                <li><a href="">Favorites</a></li>
+            </ul>
+        </nav>
+        <div class="info">
 
+            <h1>find the best beer for you</h1>
+            <p>We help you find the best beer around with one simple search</p>
+        </div>
+        <div class="search">
+            <form action="">
+                <h1>Help You find the best Bewery</h1>
+                <input class="inputBeer" placeholder="Find the Brew..." type="text">
+                <button class="btn-results">
+   
+                    Search
+                </button>
+            </form>
+        </div>
+        <div class="results">
+            <div class="loading">
+                <img class="loading-gif"src="images/loading.gif" alt="" srcset="">
+            </div>
+            <div class="results-container">
+
+                <div class="results_col">
+                    <h1>Rapp Beering Company</h1>
+                    <p>Street</p>
+                    <p>City</p>
+                    <p>State</p>
+                    <a href=""></a>
+                    <p>90909034343</p>
+                </div>
+            </div>
+            
+        </div>
+        <button class="btn-return">return</button>
     </div>
 </body>
 </html>

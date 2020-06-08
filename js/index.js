@@ -1,42 +1,52 @@
-"use strict";
+'use strict'
 
-function getBeerData(searchTerm){
-    event.preventDefault();
-    let beer = document.getElementById("inputBeer").value;
-    const url = `https://api.punkapi.com/v2/beers?beer_name=${beer}`;
-    fetch(url)
-    .then(response => {
-      if (response.ok) {
-        return response.json();
-      }
-      throw new Error(response.statusText);
-    })
-    .then(responseJson => displayResults(responseJson))
-    .catch(err => {
-     xonsole.log(err)
-    });
-    
-}
 
-function displayResults(data) {
-    let results = data.map(index =>{
-        return(
-            `
-            <div class="beerResults">
-            <h2 class="beerResults__name" >${index.name}</h2>
-            <img class="beerResults__img"src=${index.image_url} alt=${index.name}/>
-            <ul class="beerResults__items">
-              <li>PH: ${index.ph} people</li>
-              <li>Description: ${index.description}</li>
-              <li>Contributor: ${index.contributed_by}</li>
-            </ul>
-            </div>
-          `
-        )
-    })
-    document.getElementById('display').innerHTML =results;
-    document.getElementById("inputBeer").value =" "
+$(document).ready(function () {
+  function resultsScreen(angle){
+ $('.results').css("transform",` translateX(${angle})`)
   }
+  let value =$(".inputBeer")
 
-
-
+  $('.btn-results').hide()
+  let isClick = value.click(() =>{
+    $('.btn-results').show(1000
+      )
+  })
+  $('.btn-return').click(() =>{
+    resultsScreen('100%')
+  })
+  $('.loading').hide()
+    $(".btn-results").click(function (e) { 
+      e.preventDefault();
+      resultsScreen('0')
+      
+    });
+    async function getDataAsync(){
+      let response = await fetch('https://api.openbrewerydb.org/breweries')
+      let data = await response.json()
+      return data;
+    }
+    
+    
+    function showResults(res){
+      
+     let results =  res.map(index =>{
+        return (
+          `  <div class="results_col">
+          <h1>${index.name}</h1>
+          <p>Street</p>
+          <p>City</p>
+          <p>State</p>
+          <a href=""></a>
+          <p>90909034343</p>
+      </div>
+        `)
+      })
+      return results;
+    }
+    getDataAsync().then(data =>{
+      
+      $('.results-container').append(showResults(data))
+    })
+    
+});
